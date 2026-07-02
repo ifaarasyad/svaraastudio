@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svara Studio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<header>
+
+    <div class="logo-box">
+        <img src="{{ url_for('static', filename='logo.png') }}"
+             class="logo">
+
+        <h2>
+            Svara <span>Studio</span>
+        </h2>
+    </div>
+
+    <div class="theme-switcher">
+        <button id="sakuraBtn">🌸</button>
+        <button id="midnightBtn">🌙</button>
+    </div>
+
+</header>
+
+<section class="hero reveal">
+
+    <div class="hero-badge">
+        ✨ Creative Digital Studio
+    </div>
+
+    <h1>
+        Canva & Website Designs
+    </h1>
+
+    <p class="tagline">
+        Low prices, make your ideas become real ✨
+    </p>
+
+    <p class="desc">
+        Svara Studio menyediakan jasa Canva dan Website
+        dengan desain modern, aesthetic, dan harga yang
+        ramah di kantong pelajar maupun mahasiswa!
+    </p>
+
+    <a href="https://wa.me/628218502209"
+       target="_blank"
+       class="hero-btn">
+
+        Order Now
+
+    </a>
+
+    <div class="socials">
+
+        <a href="https://wa.me/628218502209"
+           target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <a href="https://instagram.com/svaraastudio"
+           target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://tiktok.com/@svaraastudio"
+           target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="stat-card reveal">
+        <h2>50+</h2>
+        <p>Projects Finished</p>
+    </div>
+
+    <div class="stat-card reveal">
+        <h2>30+</h2>
+        <p>Happy Clients</p>
+    </div>
+
+    <div class="stat-card reveal">
+        <h2>24/7</h2>
+        <p>Fast Work</p>
+    </div>
+
+</section>
+
+<section class="services">
+
+    <div class="service-card reveal">
+
+        <img src="{{ url_for('static', filename='canva.png') }}"
+             class="service-logo">
+
+        <h2>Canva Designs</h2>
+
+        <p>
+            Presentation, Poster, Notes,
+            Greeting Card, and more.
+        </p>
+
+        <button onclick="openCanva()">
+            Explore
+        </button>
+
+    </div>
+
+    <div class="service-card reveal">
+
+        <i class="fa-solid fa-globe service-icon"></i>
+
+        <h2>Website Designs</h2>
+
+        <p>
+            Landing Page, Portfolio,
+            and Creative Websites.
+        </p>
+
+        <button onclick="openWebsite()">
+            Explore
+        </button>
+
+    </div>
+
+</section>
+
+<!-- WHY US -->
+<section class="why">
+
+    <div class="why-card reveal">
+        <h3>⭐ Affordable</h3>
+        <p>Harga murah dan ramah kantong.</p>
+    </div>
+
+    <div class="why-card reveal">
+        <h3>🎨 Aesthetic</h3>
+        <p>Design modern dan elegan.</p>
+    </div>
+
+    <div class="why-card reveal">
+        <h3>⚡ Fast Work</h3>
+        <p>Pengerjaan cepat dan responsif.</p>
+    </div>
+
+</section>
+
+<!-- ================= CANVA MAIN ================= -->
+
+<div class="modal" id="canvaModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeCanva()">&times;</span>
+
+        <h1>🎨 Canva Services</h1>
+
+        <div class="pack-menu"
+             onclick="openBasic()">
+
+            ⭐ Basic Star
+
+        </div>
+
+        <div class="pack-menu"
+             onclick="openStarLight()">
+
+            ⭐ Star Light
+
+        </div>
+
+        <div class="pack-menu"
+             onclick="openNotes()">
+
+            📒 Notes
+
+        </div>
+
+        <div class="pack-menu"
+             onclick="openPoster()">
+
+            🖼 Poster
+
+        </div>
+
+        <div class="pack-menu"
+             onclick="openCard()">
+
+            💌 Kartu Ucapan
+
+        </div>
+
+        <div class="pack-menu"
+             onclick="openWebCanva()">
+
+            🌐 Web Canva
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- BASIC STAR -->
+
+<div class="modal" id="basicModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeBasic()">
+
+            &times;
+
+        </span>
+
+        <h1>⭐ Basic Star</h1>
+
+        <div class="pack">
+
+            1-10 Slide ........ 2k / slide<br>
+            11-20 Slide ........ 1.5k / slide<br>
+            Up To 20 ........ Special Price<br><br>
+
+            Express 24 Hours ........ +30%<br>
+            Revisi ........ +3k<br>
+            Motion ........ +7k
+
+        </div>
+
+        <a href="https://wa.me/628218502209"
+           class="order-btn"
+           target="_blank">
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- STAR LIGHT -->
+
+<div class="modal" id="starModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeStarLight()">
+
+            &times;
+
+        </span>
+
+        <h1>⭐ Star Light</h1>
+
+        <div class="pack">
+
+            1-10 Slide ........ 4k / slide<br>
+            11-20 Slide ........ 3.5k / slide<br>
+            Up To 20 ........ Special Price<br><br>
+
+            Express 24 Hours ........ +50%<br>
+            Revisi ........ +3k<br>
+            Motion ........ +7k
+
+        </div>
+
+        <a href="https://wa.me/628218502209"
+           class="order-btn"
+           target="_blank">
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- NOTES -->
+
+<div class="modal" id="notesModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeNotes()">
+
+            &times;
+
+        </span>
+
+        <h1>📒 Notes</h1>
+
+        <div class="pack">
+
+            1-5 Pages ........ 5k<br>
+            6-10 Pages ........ 10k<br>
+            11-20 Pages ........ 15k<br><br>
+
+            Meringkas ........ +5k - 10k
+
+        </div>
+
+        <a href="https://wa.me/628218502209"
+           class="order-btn"
+           target="_blank">
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- POSTER -->
+
+<div class="modal" id="posterModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closePoster()">
+
+            &times;
+
+        </span>
+
+        <h1>🖼 Poster</h1>
+
+        <div class="pack">
+
+            1 Page ........ 10k<br><br>
+
+            Express ........ +5k<br>
+            Revisi ........ +5k
+
+        </div>
+
+        <a href="https://wa.me/628218502209"
+           target="_blank"
+           class="order-btn">
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- KARTU UCAPAN -->
+
+<div class="modal" id="cardModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeCard()">
+
+            &times;
+
+        </span>
+
+        <h1>💌 Kartu Ucapan</h1>
+
+        <div class="pack">
+
+            1 Page ........ 5k<br><br>
+
+            Animasi ........ +10k<br>
+            Express ........ +5k<br>
+            Revisi ........ +3k
+
+        </div>
+
+        <a href="https://wa.me/628218502209"
+           target="_blank"
+           class="order-btn">
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- WEB CANVA -->
+
+<div class="modal" id="webCanvaModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeWebCanva()">
+
+            &times;
+
+        </span>
+
+        <h1>🌐 Web Canva</h1>
+
+        <div class="pack">
+
+            1-5 Page ........ 5k / page<br>
+            6-10 Page ........ 4k / page<br><br>
+
+            Express ........ +10k<br>
+            Revisi ........ +3k
+
+        </div>
+
+        <a href="https://wa.me/628218502209"
+           target="_blank"
+           class="order-btn">
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- WEBSITE MAIN -->
+
+<div class="modal" id="websiteModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeWebsite()">
+
+            &times;
+
+        </span>
+
+        <h1>💻 Website Packages</h1>
+
+        <div class="pack-menu"
+             onclick="openLite()">
+
+            🌱 Lite Design
+
+        </div>
+
+        <div class="pack-menu"
+             onclick="openPro()">
+
+            ⭐ Pro Design
+
+        </div>
+
+        <div class="pack-menu"
+             onclick="openElite()">
+
+            👑 Elite Design
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LITE -->
+
+<div class="modal" id="liteModal">
+
+    <div class="modal-content">
+
+        <div class="badge starter">
+            🌱 Starter
+        </div>
+
+        <span class="close"
+              onclick="closeLite()">
+
+            &times;
+
+        </span>
+
+        <h1>Lite Design</h1>
+
+        <div class="pack">
+
+            Price : 30k<br><br>
+
+            ✔ Responsive<br>
+            ✔ Design Simple<br>
+            ✔ Revisi 1 Kali<br>
+            ✔ Estimasi 1-2 Hari
+
+        </div>
+
+        <div class="addons">
+
+            <h3>Add-ons</h3>
+
+            🌙 Dark Mode ........ +5k<br>
+            📝 Contact Form ........ +5k<br>
+            🖼 Gallery Section ........ +5k<br>
+            ✨ Extra Animation ........ +5k<br>
+            🚀 Hosting Setup ........ +10k
+
+        </div>
+
+        <a href="https://wa.me/628218502209"
+           target="_blank"
+           class="order-btn">
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- PRO -->
+
+<div class="modal" id="proModal">
+
+    <div class="modal-content">
+
+        <div class="badge popular">
+            ⭐ Most Popular
+        </div>
+
+        <span class="close"
+              onclick="closePro()">
+
+            &times;
+
+        </span>
+
+        <h1>Pro Design</h1>
+
+        <div class="pack">
+
+            Price : 45k<br><br>
+
+            ✔ Responsive<br>
+            ✔ Modern Design<br>
+            ✔ Social Media Section<br>
+            ✔ Revisi 2 Kali<br>
+            ✔ Estimasi 2-3 Hari
+
+        </div>
+
+        <div class="addons">
+
+            <h3>Add-ons</h3>
+
+            🌙 Dark Mode ........ +5k<br>
+            📝 Contact Form ........ +5k<br>
+            🖼 Gallery Section ........ +5k<br>
+            ✨ Extra Animation ........ +5k<br>
+            🚀 Hosting Setup ........ +10k
+
+        </div>
+
+        <a href="https://wa.me/628218502209"
+           target="_blank"
+           class="order-btn">
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- ELITE -->
+
+<div class="modal" id="eliteModal">
+
+    <div class="modal-content">
+
+        <div class="badge premium">
+            👑 Best Value
+        </div>
+
+        <span class="close"
+              onclick="closeElite()">
+
+            &times;
+
+        </span>
+
+        <h1>Elite Design</h1>
+
+        <div class="pack">
+
+            Price : 75k<br><br>
+
+            ✔ Responsive<br>
+            ✔ Premium Design<br>
+            ✔ Interactive Effects<br>
+            ✔ Revisi 3 Kali<br>
+            ✔ Estimasi 3-4 Hari
+
+        </div>
+
+        <div class="addons">
+
+            <h3>Add-ons</h3>
+
+            🌙 Dark Mode ........ +5k<br>
+            📝 Contact Form ........ +5k<br>
+            🖼 Gallery Section ........ +5k<br>
+            ✨ Extra Animation ........ +5k<br>
+            🚀 Hosting Setup ........ +10k
+
+        </div>
+
+        <a href="https://wa.me/628218502209"
+           target="_blank"
+           class="order-btn">
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        Thank You • Gracias • Merci • Arigatou •
+        Terima Kasih • Danke • 감사합니다 • 谢谢
+    </p>
+
+    <p>
+        © 2026 Svara Studio. All Rights Reserved.
+    </p>
+
+</footer>
+
+<a href="https://wa.me/628218502209"
+   class="wa-float"
+   target="_blank">
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
